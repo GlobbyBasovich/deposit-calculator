@@ -1,0 +1,84 @@
+html {
+    height: 100%;
+}
+body {
+    background-color: #E9E9E9;
+    font-family: Arial;
+    height: 100%;
+    margin: 0;
+}
+header {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1F2229;
+    color: white;
+    padding: 10px;
+    padding-left: 10%;
+    font-size: 14pt;
+}
+.header_item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-right: 40px;
+}
+.logo {
+    width: 120px;
+    margin-left: -45px;
+}
+main {
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 80px;
+    background-color: #FAF6F6;
+    width: 80%;
+    min-height: calc(100% - 90px);
+}
+h1 {
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 36pt;
+}
+.tip {
+    text-align: center;
+    font-size: 12pt;
+}
+form {
+    width: fit-content;
+    margin: 0 auto;
+}
+input[type="number"], #startDate {
+    width: 220px;
+}
+#term {
+    width: calc(100% - 71px);
+}
+#unit {
+    float: right;
+}
+label.error {
+    display: block;
+    color: red;
+}
+.hidden_input {
+    visibility: hidden;
+}
+button {
+    background-color: #33C4A0;
+    color: white;
+    border-width: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #44B5B1;
+}
+#result {
+    font-size: 24pt;
+    font-weight: bold;
+}

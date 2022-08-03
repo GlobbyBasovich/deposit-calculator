@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="RU-ru">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Депозитный калькулятор</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="assets/air-datepicker/air-datepicker.css">
+    </head>
+    <body>
+        <header>
+            <img class="header_item logo" src="assets/logo.svg" />
+            <span class="header_item">Deposit Calculator</span>
+        </header>
+        <main>
+            <h1>Депозитный калькулятор</h1>
+            <div class="tip">
+                Калькулятор депозитов позволяет рассчитать ваши доходы после внесения суммы на счёт в банке по определённому тарифу.
+            </div>
+            <form id="mainForm">
+                <table><tbody>
+                    <tr>
+                        <td>
+                            <label>
+                                <div>Дата открытия</div>
+                                <input readonly id="startDate" name="startDate" required />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                                <div>Срок вклада</div>
+                                <select id="unit" name="unit" onchange="toggleTermMax()">
+                                    <option id="unitMonth">месяц</option>
+                                    <option>год</option>
+                                </select>
+                                <input type="number" id="term" name="term" required step="1" min="1" max="60" />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                <div>Сумма вклада</div>
+                                <input type="number" id="sum" name="sum" required step="0.01" min="1000" max="3000000" />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                                <div>Процентная ставка, % годовых</div>
+                                <input type="number" id="percent" name="percent" required step="1" min="3" max="100" value="10" />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                <input type="checkbox" id="doSumAdd" name="doSumAdd" checked onchange="toggleSumAdd()" />
+                                Ежемесячное пополнение вклада
+                            </label>
+                        </td>
+                        <td>
+                            <label id="sumAdd_wrapper">
+                                <div>Сумма пополнения вклада</div>
+                                <input type="number" id="sumAdd" name="sumAdd" required step="0.01" min="0" max="3000000" />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button type="submit">Рассчитать</button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="result_wrapper" class="hidden_input">
+                                <hr />
+                                <div>Сумма к выплате</div>
+                                <div id="result"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </form>
+        </main>
+        <script src="assets/jquery-3.6.0.min.js"></script>
+        <script src="assets/jquery-validation/jquery.validate.min.js"></script>
+        <script src="assets/jquery-validation/localization/messages_ru.min.js"></script>
+        <script src="assets/air-datepicker/air-datepicker.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
